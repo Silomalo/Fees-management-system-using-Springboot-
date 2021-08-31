@@ -1,0 +1,33 @@
+.container{
+    padding:0;
+    background: linear-gradient(to right, rgba(88, 207, 211, .9), rgba(61, 76, 105,.8));
+    color: black;
+}
+.container .slide img{
+    padding: 0px;
+    height: 450px;
+}
+.container .slide{
+    padding-bottom: 10px;
+    padding-left:0%;
+}
+
+.container .mb-2{
+    padding-top: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.container .text-start p{
+    color:white;
+
+}
+.container .carousel-caption p{
+    color:white;
+}
+.container .row .blog-post {
+    padding-left: 10px;
+}
+.col-md-4{
+    padding-right: 10px;
+}
+

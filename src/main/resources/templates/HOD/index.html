@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+
+    <title>HOD  | Dashboard</title>
+
+    <!-- Bootstrap core CSS -->
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/hodStyle.css">
+    <script src="https://cdn.ckeditor.com/4.7.1/standard/ckeditor.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+                <a class="navbar-brand" href="/hod/timetable">HOD Panel</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/hod/timetable">Dashboard</a></li>
+                    <li><a href="/hod/sitAllocation">Allocated Seats</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="#">Welcome HOD!</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </nav>
+    <header id="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10">
+                    <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Dashboard <small style="color:white">Manage Timetable Details</small></h1>
+                </div>
+                
+            </div>
+        </div>
+    </header>
+    <section id="breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="active">Timetable</li>
+            </ol>
+        </div>
+    </section>
+
+    <section id="main">
+        <div class="container">
+            <div class="row">
+                
+                    <!--Lates User-->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Timetable For Department</h3>
+                        </div>
+                        <div class="panel-body">
+                           <table class="table table-bordered">
+                           <thead class="thead-dark">
+                                  <tr>
+                                          <th>Room ID</th>
+                                          <th>Unit Name</th>
+                                          <th>Date</th>
+                                          <th>StartTime</th>
+                                     </tr>
+                                </thead>
+                                <tbody>
+                                    <tr  th:each="allocatedRoom : ${timetable }">
+                                      <td th:text="${allocatedRoom.roomID}">Room ID</td>
+                                      <td th:text="${allocatedRoom.UnitCode}">Unit Name</td>
+                                      <td th:text="${allocatedRoom.examDate}"> Exam Date</td>
+                                      <td th:text="${allocatedRoom.startTime}">Starting Time</td>
+                                      		
+                                    	    
+                                      </tr> 
+                                 
+                                </tbody>
+                  
+							</table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+       
+        <!--Footer-->
+    
+    <footer id="footer">
+        <p>Copyright Kamati, &copy; 2021 </p>
+    </footer>
+    
+  
+
+
+    <script>
+        CKEDITOR.replace('editor1');
+    </script>
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</body>
+
+</html>
